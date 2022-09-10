@@ -27,30 +27,30 @@
       <hr />
 
       <div class="Supplier-container">
-       <div class="container-flex">
-        <div class="container">
-          <p>Supplier</p>
-          <select class="option-select container-input">
-            <option value="Genaral">Genaral Supplier</option>
-          </select>
-        </div>
-        <div class="container">
-          <p>Supplier's Reference:	</p>
-          <input class="container-input"  type="text">
-        </div>
-       </div>
-
-       <div class="container-flex">
-        <div class="container">
-          <p>Invoie</p>
-          <input class="container-input"  type="text" placeholder="invoice">
+        <div class="container-flex">
+          <div class="container">
+            <p>Supplier</p>
+            <select class="option-select container-input">
+              <option value="Genaral">Genaral Supplier</option>
+            </select>
+          </div>
+          <div class="container">
+            <p>Supplier's Reference:</p>
+            <input class="container-input" type="text" />
+          </div>
         </div>
 
-        <div class="container">
-          <p>Date</p>
-          <input class="container-input" type="text" placeholder="today">
+        <div class="container-flex">
+          <div class="container">
+            <p>Invoie</p>
+            <input class="container-input" type="text" placeholder="invoice" />
+          </div>
+
+          <div class="container">
+            <p>Date</p>
+            <input class="container-input" type="text" placeholder="today" />
+          </div>
         </div>
-       </div>
       </div>
 
       <!-- purchases Items -->
@@ -58,32 +58,60 @@
         <h3>Purchased Items</h3>
 
         <div>
-          <table id="all-items-report">
+          <table id="purchasing-item-container">
             <tr>
-                <th>Item Code</th>
-                <th>Item Name</th>
-                <th>Quantity</th>
-                <th>Unit</th>
-                <th>Price </th>
-                <th>Total</th>
+              <th>Item Code</th>
+              <th>Item Name</th>
+              <th>Quantity</th>
+              <th>Unit</th>
+              <th>Price</th>
+              <th>Total</th>
             </tr>
             <tr>
-              <th><input id="item-code" type="text" placeholder="item code"></th>
-              <th><input id="item-name" type="text"></th>
-              <th><input id="item-quantity" type="text"></th>
-              <th>Pcs</th>
-              <th><input type="text"></th>
-              <th><input type="text"></th>
+              <th>
+                <input type="text" id="search-item-fild" />
+              </th>
+              <th>
+                <select class="update-section" id="select-tems-container">
+                  <option selected>Select Item</option>
+                </select>
+              </th>
+              <th><input id="item-quantity" type="text" /></th>
+              <th><input disabled id="unit-file"></input></th>
+              <th><input id="price" type="text" /></th>
+              <th><input disabled id="toal" type="text" /></th>
               <th><button id="add-button">Add</button></th>
             </tr>
-        </table>
+          </table>
+
+          <div class="subtotal-container">
+            <table>
+              <tr>
+                <td>Sub Total:</td>
+                <td><Span class="sub-contant" id="sub-total">00</Span></td>
+              </tr>
+              <tr>
+                <td>Sipping Charge:</td>
+                <td><input class="sub-contant" id="sipping-charge" type="text"></td>
+              </tr>
+              <tr>
+                <td>Discount:</td>
+                <td><input class="sub-contant" id="discount" type="text"></td>
+              </tr>
+              <tr>
+                <td>Total Ammount:</td>
+                <td><Span class="sub-contant" id="total-ammount">00</Span></td>
+              </tr>
+            </table>
+            <button id="update-button">Update</button>
+          </div>
+          
         </div>
-
+        <button id="invoice-button">Invoice</button>
       </div>
-
+     
     </main>
     <script src="js/utlity.js"></script>
-    <script src="js/items.js"></script>
     <script src="js/purchas.js"></script>
   </body>
 </html>

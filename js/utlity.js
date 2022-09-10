@@ -4,9 +4,17 @@
 // get input valu use id 
 const getValueUseId = (id)=>{
     const innerTextFild = document.getElementById(id);
-    const InnerTextContain = innerTextFild.value;
+    const innerTextContain = innerTextFild.value;
     innerTextFild.value = "";
-    return InnerTextContain;
+    return innerTextContain;
+}
+
+
+// get inner text  use id 
+const getInnerTextUseId = (id)=>{
+    const innerTextFild = document.getElementById(id);
+    const innerTextContain = innerTextFild.innerText;
+    return innerTextContain;
 }
 
 
@@ -20,3 +28,5 @@ const itemUpdateDisplay = (displayObject)=>{
     document.getElementById('item-type').value = displayObject[0].itemType;
     document.getElementById('unit-file').value = displayObject[0].unit;
 }
+
+

@@ -94,13 +94,11 @@
     border: 1px solid black;
     padding: 10px;
     display: flex;
-
 }
 
 
 .container-flex{
     width: 50%;
-   
 }
 .container{
     display: flex;
@@ -124,6 +122,8 @@
     padding: 20px;
     border: 1px solid black;
     width: 80%;
+    min-height: 500px;
+
 }
 
 table{
@@ -145,4 +145,32 @@ th input{
 th button{
     width: 50px;
     cursor: pointer;
+}
+
+.subtotal-container{
+    width: 200px;
+    float: right;
+    margin-top: 10px;
+}
+.sub-contant{
+    width: 50px;
+    padding: 0px 10px;
+    border: none;
+    height: 30px;
+    font-size: 18px;
+}
+
+#update-button{
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+}
+
+#invoice-button{
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 20px;
 }
