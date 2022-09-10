@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ERP Items Added System</title>
+    <link rel="stylesheet" href="styles/itrms.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+  </head>
+  <body>
+    <header>
+      <h2>Navigation menu - common</h2>
+    </header>
+    <main>
+      <h4>Items Navigation</h4>
+      <div class="items-setting-navigation">
+        <button>General Setting</button>
+        <button>Sales Pricing</button>
+        <button>Purchasing</button>
+        <button>Standard Costs</button>
+        <button>Reoder Lavels</button>
+        <button>Transactions</button>
+        <button onclick="generatePDF()">Items List</button>
+      </div>
+      <hr />
+
+      <div class="general-setting-container">
+        <section class="items-update-container">
+          <input id="search-item-fild" type="text" placeholder="Search Items" />
+          <select class="update-section" id="select-tems-container">
+            <option value=" " selected>New Item</option>
+          </select>
+        </section>
+
+        <h3>General Setting</h3>
+        <div class="items-container">
+          <div class="containers">
+            <p>Item Code:</p>
+            <input type="text" id="code-fild" />
+          </div>
+          <div class="containers">
+            <p>Name:</p>
+            <input type="text" id="name-fild" />
+          </div>
+          <div class="containers">
+            <p>Description:</p>
+            <textarea rows="3" id="descrip"></textarea>
+          </div>
+          <div class="containers">
+            <p>Category:</p>
+            <select class="option-select" id="category-option">
+              <option value="bathroom">Bathroom Fittings</option>
+              <option value="ceramic">Ceramic</option>
+              <option selected value="tiles">Tiles</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="containers">
+            <p>Item Tax Type:</p>
+            <select class="option-select" id="text-type">
+              <option selected value="regular">Regular</option>
+            </select>
+          </div>
+          <div class="containers">
+            <p>Item Type:</p>
+            <select class="option-select" id="item-type">
+              <option value="manufactured">Manufactured</option>
+              <option selected value="purchased">Purchased</option>
+              <option value="service">Service</option>
+            </select>
+          </div>
+          <div class="containers">
+            <p>Units of Measure:</p>
+            <select class="option-select" id="unit-file">
+              <option value="box">Box</option>
+              <option selected value="pcs">Pcs</option>
+              <option value="feet">Feet</option>
+              <option value="dozen">Dozen</option>
+            </select>
+          </div>
+        </div>
+        <div class="inesrt-button-container">
+          <button id="inesrt-button">Inesrt New Item</button>
+        </div>
+      </div>
+    </main>
+    <script src="js/utlity.js"></script>
+    <script src="js/items.js"></script>
+  </body>
+</html>
