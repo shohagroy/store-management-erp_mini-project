@@ -101,6 +101,8 @@ getAllProductInOneArray(ceramicObject)
 getAllProductInOneArray(bathroomObject)
 getAllProductInOneArray(otherObject)
 
+
+
 const itemSelectOption = document.getElementById('select-tems-container');
 const searchItemFild = document.getElementById('search-item-fild');
 newArrayItems.forEach(items =>{
@@ -121,14 +123,7 @@ itemSelectOption.addEventListener('change', ()=>{
 })
 
 
-function generatePDF() {
-    // Choose the element that our invoice is rendered in.
-    const element = document.getElementById('select-tems-container');
-    // Choose the element and save the PDF for our user.
-    html2pdf().from(element).save();
-}
+document.getElementById('items-list').addEventListener('click', ()=>{
+    window.open('reports/all-items.html','popup','width=600,height=600')
+})
 
-
-var doc = new jsPDF()
-doc.text('Hello world!', 10, 10)
-doc.save('a4.pdf')

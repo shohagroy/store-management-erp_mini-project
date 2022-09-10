@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Items</title>
+
+    <style>
+        main{
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        table{
+            width: 80%;
+            
+        }
+        table, tr, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <main>
+        <h2>All Items</h2>
+        <table id="all-items-report">
+            <tr>
+                <th>Item Code</th>
+                <th>Item Name</th>
+                <th>Unit</th>
+                <th>Category</th>
+
+            </tr>
+        </table>
+    </main>
+    
+    <script src="app.js"></script>
+</body>
+</html>
