@@ -124,6 +124,6 @@ itemSelectOption.addEventListener('change', ()=>{
 
 
 document.getElementById('items-list').addEventListener('click', ()=>{
-    window.open('reports/all-items.html','popup','width=600,height=600')
+    window.open('reports/all-items.html','popup','width=800,height=600')
 })
 

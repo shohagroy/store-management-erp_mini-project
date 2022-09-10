@@ -83,3 +83,66 @@
     font-size: 18px;
     cursor: pointer;
 }
+
+
+/* purchasing page css start  */
+
+.Supplier-container{
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    border: 1px solid black;
+    padding: 10px;
+    display: flex;
+
+}
+
+
+.container-flex{
+    width: 50%;
+   
+}
+.container{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    padding: 5px;
+}
+.container p{
+    padding-right: 5px;
+    width: 80px;
+}
+
+.container-input{
+    width: 130px;
+}
+
+.purchases-tems{
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid black;
+    width: 80%;
+}
+
+table{
+    width: 100%;
+}
+
+table, tr, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;    
+}
+
+th input{
+    width: 100%;
+    border: none;
+    height: 100%;
+}
+
+th button{
+    width: 50px;
+    cursor: pointer;
+}
