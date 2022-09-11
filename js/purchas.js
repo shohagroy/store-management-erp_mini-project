@@ -1,18 +1,36 @@
 
 
 // tiles category 
-let tilesObject = JSON.parse(localStorage.getItem('tiles'))
+let tilesObject = JSON.parse(localStorage.getItem('Tiles'))
 
 // ceramic category 
-let ceramicObject = JSON.parse(localStorage.getItem('ceramic'))
+let ceramicObject = JSON.parse(localStorage.getItem('Ceramic'))
 
 // bathroom category 
-let bathroomObject = JSON.parse(localStorage.getItem('bathroom'))
+let bathroomObject = JSON.parse(localStorage.getItem('Bathroom'))
 
 // other category 
-let otherObject = JSON.parse(localStorage.getItem('other'))
+let otherObject = JSON.parse(localStorage.getItem('Other'))
+
+const invoiceNumber = document.getElementById('invoice-number')
+invoiceNumber.innerText = 4
 
 
+
+const priveausInvoiceNumber = JSON.parse(localStorage.getItem('invoice'));
+
+
+for(const invoice in priveausInvoiceNumber){
+    console.log(invoice)
+}
+console.log(priveausInvoiceNumber)
+
+const invoiceDate = document.getElementById('invoice-date');
+const today = new Date()
+
+const dateAndTime = today.toLocaleTimeString() + "  " + today.toLocaleDateString();
+
+invoiceDate.innerText = dateAndTime
 
 let totalAmmount = []
 let allContant = []
@@ -28,21 +46,21 @@ document.getElementById('add-button').addEventListener('click', ()=>{
     let total = getValueUseId('toal');
     total = itemquantity * itemPrice;
 
-    
-    
     totalAmmount.push(total)
     contant.push(itemCode,itemName, itemquantity, itemUnit, itemPrice, total)
     
     allContant.push(contant)
-    
-    console.log(allContant)
+
+    console.log(totalAmmount)
     
     let subtotatFild = document.getElementById('sub-total');
-
     let subtotal = totalAmmount.reduce((x, y)=> x + y)
 
+    let mainTotal = document.getElementById('total-ammount');
+    mainTotal.innerText = subtotal
+
     subtotatFild.innerText = subtotal
-    console.log(subtotal)
+
     const purchasedContainer = document.getElementById('purchasing-item-container');
 
     const newPurchage = document.createElement('tr');
@@ -56,6 +74,25 @@ document.getElementById('add-button').addEventListener('click', ()=>{
     `
     purchasedContainer.appendChild(newPurchage)
 
+})
+
+document.getElementById('update-button').addEventListener('click', ()=>{
+
+    let subtotatFild = document.getElementById('sub-total');
+    let shippingChange = document.getElementById('sipping-charge');
+    let discount = document.getElementById('discount');
+    let totalAmmount = document.getElementById('total-ammount');
+
+    let subtotalString = subtotatFild.innerText
+    let subTotalNumber = parseFloat(subtotalString)
+
+    const shippingChangeValue = shippingChange.value;
+    const shippingChangeNumber = parseFloat(shippingChangeValue);
+
+    const discountValu = discount.value;
+    const discountNumer = parseFloat(discountValu);
+
+    totalAmmount.innerText = subTotalNumber + shippingChangeNumber - discountNumer;
 })
 
 const newArrayItems = [];
@@ -87,36 +124,32 @@ newArrayItems.forEach(items =>{
 })
 
 document.getElementById('invoice-button').addEventListener('click', ()=>{
-    console.log('invoice button click')
 
-    // const itemCode = getInnerTextUseId('search-item-fild');
-    // const itemName = getInnerTextUseId('select-tems-container');
-    // const itemquantity = getInnerTextUseId('item-quantity');
-    // const itemUnit = getInnerTextUseId('unit-file');
-    // const itemPrice = getInnerTextUseId('price');
-    // const total = getInnerTextUseId('toal');
-
-    // console.log(itemCode)
+    const genarateInvoice = {};
+    const genarateInvoiceNUmber = document.getElementById('make-invoice-number').innerText;
 
 
-    // const newContaint = [];
+    const totalAmountElement = {}
 
-    // const purchageContain = document.querySelectorAll('.purchased-contain');
-    // console.log(purchageContain)
+    
+    const subtotatFild = document.getElementById('sub-total').innerText;
+    const shippingChange = document.getElementById('sipping-charge').value;
+    const discount = document.getElementById('discount').value;
+    const totalAmmount = document.getElementById('total-ammount').innerText;
 
-    // purchageContain.forEach(contain =>{
-    //     newContaint.push(contain.innerText)
-    //     console.log(contain.innerText)
-    // })
+    allContant.push(totalAmountElement)
 
-    // console.log(newContaint)
+    genarateInvoice[genarateInvoiceNUmber] = allContant;
+
+    totalAmountElement.sub = subtotatFild
+    totalAmountElement.shipping = shippingChange
+    totalAmountElement.discount = discount
+    totalAmountElement.total = totalAmmount
+
+    localStorage.setItem('invoice', JSON.stringify(genarateInvoice))
+    document.location.reload(true)
 })
-
-
 
 document.getElementById('items-list').addEventListener('click', ()=>{
     window.open('reports/all-items.html','popup','width=800,height=600')
 })
-
-
-

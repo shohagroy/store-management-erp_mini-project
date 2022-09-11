@@ -1,18 +1,18 @@
 
 // tiles category 
-let tilesObject = JSON.parse(localStorage.getItem('tiles'))
+let tilesObject = JSON.parse(localStorage.getItem('Tiles'))
 let tilesArray = [];
 
 // ceramic category 
-let ceramicObject = JSON.parse(localStorage.getItem('ceramic'))
+let ceramicObject = JSON.parse(localStorage.getItem('Ceramic'))
 let ceramicArray = [];
 
 // bathroom category 
-let bathroomObject = JSON.parse(localStorage.getItem('bathroom'))
+let bathroomObject = JSON.parse(localStorage.getItem('Bathroom'))
 let bathroomArray = [];
 
 // other category 
-let otherObject = JSON.parse(localStorage.getItem('other'))
+let otherObject = JSON.parse(localStorage.getItem('Other'))
 let otherArray = [];
 
 // inesrt button get and functionlity 
@@ -30,7 +30,7 @@ document.getElementById('inesrt-button').addEventListener('click', ()=>{
 
     const newsObject = {}
 
-    if(category === 'tiles'){
+    if(category === 'Tiles'){
         if(tilesObject === null){
             tilesArray.push(itemDetales);
             newsObject[entryCode] = tilesArray;
@@ -43,7 +43,7 @@ document.getElementById('inesrt-button').addEventListener('click', ()=>{
         }
         document.location.reload(true)
     }
-    else if(category === 'ceramic'){
+    else if(category === 'Ceramic'){
         if(ceramicObject === null){
             ceramicArray.push(itemDetales);
             newsObject[entryCode] = ceramicArray;
@@ -56,7 +56,7 @@ document.getElementById('inesrt-button').addEventListener('click', ()=>{
         }
         document.location.reload(true)
 
-    }else if(category == 'bathroom'){
+    }else if(category == 'Bathroom'){
         if(bathroomObject === null){
             bathroomArray.push(itemDetales);
             newsObject[entryCode] = bathroomArray;

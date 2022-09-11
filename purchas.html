@@ -43,12 +43,12 @@
         <div class="container-flex">
           <div class="container">
             <p>Invoie</p>
-            <input class="container-input" type="text" placeholder="invoice" />
+            <p id="make-invoice-number"><span id="invoice-number" class="container-input"></span>/2022</p>
           </div>
 
           <div class="container">
             <p>Date</p>
-            <input class="container-input" type="text" placeholder="today" />
+            <span id="invoice-date" class="container-input" type="text" placeholder="today"></span>
           </div>
         </div>
       </div>
@@ -92,11 +92,11 @@
               </tr>
               <tr>
                 <td>Sipping Charge:</td>
-                <td><input class="sub-contant" id="sipping-charge" type="text"></td>
+                <td><input value="0" class="sub-contant" id="sipping-charge" type="text"></td>
               </tr>
               <tr>
                 <td>Discount:</td>
-                <td><input class="sub-contant" id="discount" type="text"></td>
+                <td><input value="0" class="sub-contant" id="discount" type="text"></td>
               </tr>
               <tr>
                 <td>Total Ammount:</td>
