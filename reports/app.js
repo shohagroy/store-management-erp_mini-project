@@ -1,16 +1,17 @@
 
 
+// all items display section 
 // tiles category 
-let tilesObject = JSON.parse(localStorage.getItem('tiles'))
+let tilesObject = JSON.parse(localStorage.getItem('Tiles'))
 
 // ceramic category 
-let ceramicObject = JSON.parse(localStorage.getItem('ceramic'))
+let ceramicObject = JSON.parse(localStorage.getItem('Ceramic'))
 
 // bathroom category 
-let bathroomObject = JSON.parse(localStorage.getItem('bathroom'))
+let bathroomObject = JSON.parse(localStorage.getItem('Bathroom'))
 
 // other category 
-let otherObject = JSON.parse(localStorage.getItem('other'))
+let otherObject = JSON.parse(localStorage.getItem('Other'))
 
 const newArrayItems = [];
 
@@ -25,7 +26,6 @@ getAllProductInOneArray(ceramicObject)
 getAllProductInOneArray(bathroomObject)
 getAllProductInOneArray(otherObject)
 
-console.log(newArrayItems)
 const displayContainer = document.getElementById('all-items-report')
 newArrayItems.forEach(items =>{
     const newOption = document.createElement('tr')
@@ -36,6 +36,4 @@ newArrayItems.forEach(items =>{
         <td>${items.category}</td>
     `
     displayContainer.appendChild(newOption)
-
-    console.log(items)
 })

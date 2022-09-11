@@ -1,29 +1,26 @@
 
-
 // tiles category 
 let tilesObject = JSON.parse(localStorage.getItem('Tiles'))
-
 // ceramic category 
 let ceramicObject = JSON.parse(localStorage.getItem('Ceramic'))
-
 // bathroom category 
 let bathroomObject = JSON.parse(localStorage.getItem('Bathroom'))
-
 // other category 
 let otherObject = JSON.parse(localStorage.getItem('Other'))
 
+let allInvoice = JSON.parse(localStorage.getItem('invoice'));
+
 const invoiceNumber = document.getElementById('invoice-number')
-invoiceNumber.innerText = 4
 
 
-
-const priveausInvoiceNumber = JSON.parse(localStorage.getItem('invoice'));
-
-
-for(const invoice in priveausInvoiceNumber){
-    console.log(invoice)
+if(allInvoice === null){
+    invoiceNumber.innerText = 1
 }
-console.log(priveausInvoiceNumber)
+else{
+    let newInvoiceNumber = Object.keys(allInvoice).length
+    let newGenatareNumber = newInvoiceNumber + 1;
+    invoiceNumber.innerText = newGenatareNumber
+}
 
 const invoiceDate = document.getElementById('invoice-date');
 const today = new Date()
@@ -50,8 +47,6 @@ document.getElementById('add-button').addEventListener('click', ()=>{
     contant.push(itemCode,itemName, itemquantity, itemUnit, itemPrice, total)
     
     allContant.push(contant)
-
-    console.log(totalAmmount)
     
     let subtotatFild = document.getElementById('sub-total');
     let subtotal = totalAmmount.reduce((x, y)=> x + y)
@@ -73,7 +68,6 @@ document.getElementById('add-button').addEventListener('click', ()=>{
         <th class="purchased-contain totalPrice">${total}</th>
     `
     purchasedContainer.appendChild(newPurchage)
-
 })
 
 document.getElementById('update-button').addEventListener('click', ()=>{
@@ -125,28 +119,33 @@ newArrayItems.forEach(items =>{
 
 document.getElementById('invoice-button').addEventListener('click', ()=>{
 
-    const genarateInvoice = {};
+const genarateInvoice = {}
+const newArray = []
+
     const genarateInvoiceNUmber = document.getElementById('make-invoice-number').innerText;
+    const getDate = document.getElementById('invoice-date').innerText;
+    const customerName = document.getElementById('customer-name-fild').value;
 
-
-    const totalAmountElement = {}
-
-    
     const subtotatFild = document.getElementById('sub-total').innerText;
     const shippingChange = document.getElementById('sipping-charge').value;
     const discount = document.getElementById('discount').value;
     const totalAmmount = document.getElementById('total-ammount').innerText;
 
-    allContant.push(totalAmountElement)
+    const totalAmountElement = {invoice: genarateInvoiceNUmber, date: getDate, name:customerName, sub: subtotatFild, shipping: shippingChange, discount: discount, total: totalAmmount }
 
-    genarateInvoice[genarateInvoiceNUmber] = allContant;
-
-    totalAmountElement.sub = subtotatFild
-    totalAmountElement.shipping = shippingChange
-    totalAmountElement.discount = discount
-    totalAmountElement.total = totalAmmount
-
-    localStorage.setItem('invoice', JSON.stringify(genarateInvoice))
+    if(allInvoice === null){
+        newArray.push(totalAmountElement)
+        newArray.push(allContant)
+        genarateInvoice[genarateInvoiceNUmber] = newArray;
+        localStorage.setItem("invoice", JSON.stringify(genarateInvoice))
+    }
+    else{
+        newArray.push(totalAmountElement)
+        newArray.push(allContant)
+        allInvoice[genarateInvoiceNUmber] = newArray
+        localStorage.setItem("invoice", JSON.stringify(allInvoice))
+    }
+    
     document.location.reload(true)
 })
 
