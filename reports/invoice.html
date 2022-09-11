@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Invoice List</title>
+    <link rel="stylesheet" href="invoice.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 50px;
+        padding: 15px;
+        background-color: rgb(227, 227, 227);
+      }
+
+      header p {
+        padding: 10px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Imperial - Shop</h1>
+      <p>Shop Management System</p>
+    </header>
+    <main>
+      <div class="invoice-text">Invoice</div>
+      <div class="main-container">
+        <div class="information-section">
+          <div class="information-container">
+            <p>Customer: <strong>General Customar</strong></p>
+            <p>
+              Custoner Name:
+              <strong><span id="custoner-name"></span></strong>
+            </p>
+          </div>
+          <div class="information-container">
+            <p>
+              Invoice: <strong><span id="invoice"></span></strong>
+            </p>
+            <p>
+              Time and Date: <strong><span id="date"></span></strong>
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <table id="items-table">
+            <tr>
+              <th>SL</th>
+              <th>Item Description</th>
+              <th>Quantity</th>
+              <th>Unit</th>
+              <th>Price after Tax</th>
+              <th>Total Amount</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <div class="subtotal-table">
+          <table>
+            <tr>
+              <th>Subtotal:</th>
+              <th><strong id="subtotal-fild">000</strong></th>
+            </tr>
+            <tr>
+              <th>Shipping Charge:</th>
+              <th><strong id="shipping-fild">000</strong></th>
+            </tr>
+            <tr>
+              <th>Discount:</th>
+              <th><strong id="discount-fild">000</strong></th>
+            </tr>
+            <tr>
+              <th>Total:</th>
+              <th><strong id="total-fild">000</strong></th>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="authorizaed-container">
+        <div class="containe">
+          <p>.............................</p>
+          <p>Prepared By</p>
+        </div>
+        <div class="containe">
+          <p>..........................................</p>
+          <p>Authorized Signature</p>
+        </div>
+      </div>
+    </main>
+
+    <script src="invoice.js"></script>
+  </body>
+</html>

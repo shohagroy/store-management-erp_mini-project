@@ -146,7 +146,10 @@ const newArray = []
         localStorage.setItem("invoice", JSON.stringify(allInvoice))
     }
     
-    document.location.reload(true)
+    // document.location.reload(true)
+    viewInvoice('1/2022')
+    window.open('reports/invoice.html','popup','width=800,height=600')
+
 })
 
 document.getElementById('items-list').addEventListener('click', ()=>{
