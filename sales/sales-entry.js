@@ -106,16 +106,25 @@ const itemSelectOption = document.getElementById('select-tems-container');
 const searchItemFild = document.getElementById('search-item-fild');
 newArrayItems.forEach(items =>{
     const newOption = document.createElement('option')
-    newOption.setAttribute('value', items.name)
+    newOption.setAttribute('value', items.code)
     newOption.innerHTML = `
     <option class="purchage-total">${items.name}</option>
     `
     itemSelectOption.appendChild(newOption)
+    
     itemSelectOption.addEventListener('change', ()=>{
-    searchItemFild.value = items.code
     document.getElementById('unit-file').value = items.unit;
+
 })
+
 })
+
+
+itemSelectOption.addEventListener('change', ()=>{
+    searchItemFild.value = itemSelectOption.value
+
+})
+
 
 document.getElementById('invoice-button').addEventListener('click', ()=>{
 
@@ -146,12 +155,11 @@ const newArray = []
         localStorage.setItem("invoice", JSON.stringify(allInvoice))
     }
     
-    // document.location.reload(true)
-    viewInvoice('1/2022')
-    window.open('invoice.html','popup','width=800,height=600')
-
+    window.open('/invoice-prient/invoice.html','popup','width=800,height=600')
+    document.location.reload(true)
 })
 
 document.getElementById('items-list').addEventListener('click', ()=>{
-    window.open('reports/all-items.html','popup','width=800,height=600')
+    window.open('/items-list/all-items.html','popup','width=800,height=600')
 })
+

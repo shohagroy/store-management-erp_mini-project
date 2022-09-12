@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tailwind css cdn link -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+    <!-- fontawesome link  -->
+    <script
+      src="https://kit.fontawesome.com/c856552904.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- google font link  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      header {
+        margin: 100px;
+      }
+
+      main {
+        font-family: "Fredoka One", cursive;
+        height: 70vh;
+      }
+      form{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 25px;
+      }
+
+      .fa-brands{
+        padding: 5px;
+        font-size: 20px;
+        padding-bottom: 30px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .fa-brands:hover{
+        font-size: 25px;
+      }
+      @media only screen and (max-width: 786px){
+        #heading{
+          font-size: 25px;
+        }
+        #image{
+          width: 200px;
+        }
+
+        footer{
+          margin-top: 100px;
+        }
+
+      }
+        
+    </style>
+
+    <title>Wellcome to Imperial Banking System</title>
+  </head>
+  <body>
+    <header>
+
+    </header>
+
+    <main class="">
+      <div class="flex justify-center items-center flex-col">
+        <img id="image" class="w-1/6" src="images/logo.png" alt="" />
+        <p class="mt-4">Please Enter Your Email & Password and Login </p>
+        
+        <form action="">
+          <input id="email-fild" class="w-96 my-2 block rounded-xl pl-5" type="text" placeholder="email">
+          <input id="password-fild" class="w-96 block rounded-xl pl-5" type="password" placeholder="password">
+        </form>
+
+
+        <button id="login-button" onclick="loginprotal()" 
+          class="bg-blue-500 px-4 py-2 mt-5 rounded-lg text-bold text-white hover:bg-red-700"
+        >
+          Login
+        </button>
+      </div>
+    </main>
+    <div>
+      <p>Email: abc@gmail.com</p>
+      <p>Password: 1234</p>
+    </div>
+
+    <footer
+      class="text-white bg-black  flex justify-center items-center flex-col"
+    >
+      <p class="mt-5">Follow Us</p>
+      <div class="flex">
+        <p><i class="fa-brands fa-square-facebook"></i></i></p>
+        <p><i class="fa-brands fa-square-instagram"></i></p>
+        <p><i class="fa-brands fa-linkedin"></i></p>
+      </div>
+    </footer>
+
+    <script src="js/login.js"></script>
+  </body>
+</html>

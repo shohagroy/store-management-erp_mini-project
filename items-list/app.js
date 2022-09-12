@@ -21,6 +21,8 @@ const getAllProductInOneArray = (productObject)=>{
     }
 }
 
+
+
 getAllProductInOneArray(tilesObject)
 getAllProductInOneArray(ceramicObject)
 getAllProductInOneArray(bathroomObject)

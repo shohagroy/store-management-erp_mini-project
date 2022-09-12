@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>All Items</title>
+    <title>All Invoice List</title>
+    <link rel="stylesheet" href="/styles/itrms.css" />
 
     <style>
       * {
@@ -48,20 +49,30 @@
   <body>
     <header>
       <h1>Imperial - Shop</h1>
+      <p>Address: Rangpur City, Phone: +8801700000000 Email: abc@gmail.com</p>
       <p>Shop Management System</p>
     </header>
     <main>
-      <h2>All Items</h2>
-      <table id="all-items-report">
+      <div class="items-setting-navigation">
+        <button><a href="\sales/sales-entry.html">Sales</a></button>
+        <button><a href="\items/item-entry.html">Items Entry</a></button>
+        <button>Reports</button>
+        <button id="items-list"><a href="">Items List</a></button>
+        <button>General Setting</button>
+      </div>
+      <h2>All Invoice List</h2>
+      <table id="all-invoice-report">
         <tr>
-          <th>Item Code</th>
-          <th>Item Name</th>
-          <th>Unit</th>
-          <th>Category</th>
+          <th>Invoice Number</th>
+          <th>Customer Name</th>
+          <th>Date</th>
+          <th>Total Amount</th>
+          <th></th>
         </tr>
       </table>
     </main>
 
-    <script src="app.js"></script>
+    <script src="\js/utlity.js"></script>
+    <script src="invoice-list.js"></script>
   </body>
 </html>

@@ -118,12 +118,9 @@ itemSelectOption.addEventListener('change', ()=>{
     searchItemFild.value = itemSelectOption.value
     const displayUpdateitem = tilesObject[itemSelectOption.value]
     itemUpdateDisplay(displayUpdateitem);
-
     document.getElementById('inesrt-button').innerText = "Update Items";
 })
 
-
 document.getElementById('items-list').addEventListener('click', ()=>{
-    window.open('reports/all-items.html','popup','width=800,height=600')
+    window.open('/items-list/all-items.html','popup','width=800,height=600')
 })
-

@@ -21,3 +21,8 @@ for(const invoiceNumber in allInvoice){
 }
 
 
+
+document.getElementById('items-list').addEventListener('click', ()=>{
+    window.open('/items-list/all-items.html','popup','width=800,height=600')
+})
+
