@@ -30,7 +30,7 @@ document.getElementById('inesrt-button').addEventListener('click', ()=>{
 
     const newsObject = {}
 
-    if(category === 'Tiles'){
+    if(category === 'Smart Phone'){
         if(tilesObject === null){
             tilesArray.push(itemDetales);
             newsObject[entryCode] = tilesArray;
@@ -43,7 +43,7 @@ document.getElementById('inesrt-button').addEventListener('click', ()=>{
         }
         document.location.reload(true)
     }
-    else if(category === 'Ceramic'){
+    else if(category === 'Lobtop'){
         if(ceramicObject === null){
             ceramicArray.push(itemDetales);
             newsObject[entryCode] = ceramicArray;
@@ -56,7 +56,7 @@ document.getElementById('inesrt-button').addEventListener('click', ()=>{
         }
         document.location.reload(true)
 
-    }else if(category == 'Bathroom'){
+    }else if(category == 'Watch'){
         if(bathroomObject === null){
             bathroomArray.push(itemDetales);
             newsObject[entryCode] = bathroomArray;
