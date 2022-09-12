@@ -1,14 +1,14 @@
 
 // tiles category 
-let tilesObject = JSON.parse(localStorage.getItem('Tiles'))
+let tilesObject = JSON.parse(localStorage.getItem('Smart Phone'))
 let tilesArray = [];
 
 // ceramic category 
-let ceramicObject = JSON.parse(localStorage.getItem('Ceramic'))
+let ceramicObject = JSON.parse(localStorage.getItem('Lobtop'))
 let ceramicArray = [];
 
 // bathroom category 
-let bathroomObject = JSON.parse(localStorage.getItem('Bathroom'))
+let bathroomObject = JSON.parse(localStorage.getItem('Watch'))
 let bathroomArray = [];
 
 // other category 

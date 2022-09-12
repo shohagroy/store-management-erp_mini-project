@@ -1,10 +1,10 @@
 
 // tiles category 
-let tilesObject = JSON.parse(localStorage.getItem('Tiles'))
+let tilesObject = JSON.parse(localStorage.getItem('Smart Phone'))
 // ceramic category 
-let ceramicObject = JSON.parse(localStorage.getItem('Ceramic'))
+let ceramicObject = JSON.parse(localStorage.getItem('Lobtop'))
 // bathroom category 
-let bathroomObject = JSON.parse(localStorage.getItem('Bathroom'))
+let bathroomObject = JSON.parse(localStorage.getItem('Watch'))
 // other category 
 let otherObject = JSON.parse(localStorage.getItem('Other'))
 
