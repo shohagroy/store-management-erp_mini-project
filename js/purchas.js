@@ -148,7 +148,7 @@ const newArray = []
     
     // document.location.reload(true)
     viewInvoice('1/2022')
-    window.open('reports/invoice.html','popup','width=800,height=600')
+    window.open('invoice.html','popup','width=800,height=600')
 
 })
 
